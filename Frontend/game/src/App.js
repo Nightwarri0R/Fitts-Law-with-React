@@ -11,9 +11,9 @@ function App() {
         </p>
         <a
           className="App-link"
-          href="https://reactjs.org"
+          href="./Consent"
           target="_blank"
-          rel="noopener noreferrer"
+          //rel="noopener noreferrer"
         >
           Learn React
         </a>
