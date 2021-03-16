@@ -3,14 +3,21 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import button_to_terms from './Consent';
-import { BrowserRouter, Route } from 'react-router-dom'
+import Consent_form from './Consent';
+
 
 ReactDOM.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>,
   document.getElementById('root')
+);
+
+ReactDOM.render(
+  <React.StrictMode>
+    < Consent_form />
+    </React.StrictMode>,
+  document.getElementById('consent_form')
 );
 // ReactDOM.render(
 // <React.StrictMode>

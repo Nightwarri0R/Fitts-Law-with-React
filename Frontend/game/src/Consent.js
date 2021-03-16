@@ -1,12 +1,8 @@
-import { Link } from 'react-router';
-import { BrowserRouter, Route } from 'react-router-dom'
 
-function consent_form(){
+function Consent_form(){
     return(
         <div className="=consent_form">
-            <p>
-                This is the consent form
-            </p>
+            <h1> This is the consent form</h1>
         </div>
     );
 }
@@ -24,4 +20,4 @@ function consent_form(){
 // }
 
 //export default consent_form;
-export default consent_form;
+export default Consent_form;
