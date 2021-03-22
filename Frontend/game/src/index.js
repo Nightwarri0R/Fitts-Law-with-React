@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Consent_form from './Consent';
+export {default as Consent} from './components/Consent';
 
 
 ReactDOM.render(
@@ -13,12 +13,12 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
-ReactDOM.render(
-  <React.StrictMode>
-    < Consent_form />
-    </React.StrictMode>,
-  document.getElementById('consent_form')
-);
+//ReactDOM.render(
+  //<React.StrictMode>
+    //< Consent_form />
+    //</React.StrictMode>,
+  //document.getElementById('consent_form')
+//);
 // ReactDOM.render(
 // <React.StrictMode>
 //   <button_to_terms/>
