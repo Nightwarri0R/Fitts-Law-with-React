@@ -17,7 +17,7 @@ function App() {
 
         </Switch>
       </Router>
-  
+    <div><Consent pdf={'Consent_form.pdf'}/></div>
     </div>
 
 
