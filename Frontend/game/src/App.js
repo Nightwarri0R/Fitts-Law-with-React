@@ -1,24 +1,31 @@
-
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import Consent from './components/Consent';
+import Interface from './components/Interface';
 import React from "react";
 
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Consent from './components/Consent';
+
+
 
 function App() {
   return (
     <div>
+      <div className="menu_container">
+        
+        <Router>
+          <Interface/>
+          <Switch>
+          <Link to="/about"><Consent/></Link>
+          <Route path="/" exact component={() => <Consent/>} />
+          </Switch>
+        </Router>
+        
+      
+        </div>
 
-      <header>
-        <h1>Pop the Bubbles !</h1>
-      </header>
-      <Router>
-        <Switch>
-          <Route path="./components/Consent" exact component={() =><Consent/>}/>
 
-        </Switch>
-      </Router>
-    <div><Consent pdf={'Consent_form.pdf'}/></div>
-    </div>
+      </div>
+
+    //</div>
 
 
   );
