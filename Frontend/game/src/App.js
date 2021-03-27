@@ -4,31 +4,31 @@ import Interface from './components/Interface';
 import React from "react";
 
 
-
-
 function App() {
   return (
     <div>
       <div className="menu_container">
-        
-        <Router>
-          <Interface/>
-          <Switch>
-          <Link to="/about"><Consent/></Link>
-          <Route path="/" exact component={() => <Consent/>} />
-          </Switch>
-        </Router>
-        
-      
-        </div>
 
+        <Router>
+        
+
+          <Switch>
+            <Route path="/about">
+              
+            </Route>
+            <Route path="/components/Consent'">
+              <Consent/>
+            </Route>
+            <Route path="/">
+              <Interface/>
+            </Route>
+          </Switch>
+
+        </Router>
 
       </div>
+    </div>
+      );
+      }
 
-    //</div>
-
-
-  );
-}
-
-export default App;
+      export default App;

@@ -8,7 +8,7 @@ const Consent = () => {
     <div>
       <h1>Consent Form</h1>
       <p>
-
+        Helloo there this is test 1
       </p>
     </div>
   )
@@ -20,7 +20,7 @@ const Consent = () => {
  const Consent1 = () => {
   return (
     <div>
-      <Link to ="./Consent" >
+      <Link to ={Consent} >
         <button >
           <p>Click me</p>
         </button>
@@ -32,7 +32,7 @@ const Consent = () => {
 
 
 
-export default Consent1;
+export default Consent;
 
 // import React, { useState } from "react";
 // import { Document, Page } from "react-pdf";
