@@ -2,8 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import Button from './components/Button'
 import reportWebVitals from './reportWebVitals';
-export {default as Consent} from './components/Consent';
+
 
 
 ReactDOM.render(

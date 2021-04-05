@@ -1,38 +1,31 @@
 
 import React from 'react'
 import { BrowserRouter as Link } from "react-router-dom";
+import Button from './Button';
+
+
+
 
 const Consent = () => {
 
   return (
     <div>
-      <h1>Consent Form</h1>
+      <h1 id="Participation_tittle">Participation Sheet</h1>
       <p>
-        Helloo there this is test 1
+        
       </p>
+      <div>
+        <h1 id=""> Consent Form</h1>
+        <p>
+
+        </p>
+      </div>
     </div>
   )
 }
-
-
-
-
- const Consent1 = () => {
-  return (
-    <div>
-      <Link to ={Consent} >
-        <button >
-          <p>Click me</p>
-        </button>
-      </Link>
-      
-    </div>
-  )
-}
-
-
-
 export default Consent;
+
+
 
 // import React, { useState } from "react";
 // import { Document, Page } from "react-pdf";
