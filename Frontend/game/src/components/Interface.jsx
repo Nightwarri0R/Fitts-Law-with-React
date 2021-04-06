@@ -27,7 +27,7 @@ function Navigation(props) {
                   props.location.pathname === "/Consent" ? "active" : ""
                 }`}
               >
-                <Link class="nav-link" to="/Consent">
+                <Link class="nav-link" to= {Consent}>
                   Consent
                 </Link>
               </li>

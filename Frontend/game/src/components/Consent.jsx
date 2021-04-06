@@ -15,11 +15,12 @@ const Consent = () => {
         
       </p>
       <div>
-        <h1 id=""> Consent Form</h1>
+        <h1 id="Participation_tittle"> Consent Form</h1>
         <p>
 
         </p>
       </div>
+      <Button/>
     </div>
   )
 }
