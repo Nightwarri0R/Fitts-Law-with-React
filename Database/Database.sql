@@ -1,7 +1,7 @@
 
 CREATE 
 
-DROP TABLE IF EXISTS users_scores;
+DROP TABLE IF EXISTS scors;
 
 CREATE TABLE scores(
 user_id SERIAL PRIMARY KEY, 
