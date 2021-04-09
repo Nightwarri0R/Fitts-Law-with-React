@@ -1,42 +1,50 @@
 import React from "react";
-import { Link, withRouter } from "react-router-dom";
 import Consent from './Consent';
+import Button1 from './Button'
+import Navitem from './Navitem'
+import Container from 'react-bootstrap/Container';
+import Button from 'react-bootstrap/Button';
+import { BrowserRouter, Router, Route, Link, Switch } from 'react-router-dom';
+import App from '../App'
 
 function Navigation(props) {
   return (
-    <div className="navigation">
-      <nav class="navbar navbar-expand navbar-dark bg-dark">
-        <div class="container">
-          <Link class="navbar-brand" to="/">
-            <h1>Pop the Bubbles !</h1>
-          </Link>
-          <div>
-            <ul class="navbar-nav ml-auto">
-              <li
-                class={`nav-item  ${
-                  props.location.pathname === "/" ? "active" : ""
-                }`}
-              >
-                <Link class="nav-link" to="/">
-                  Home
-                  <span class="sr-only">(current)</span>
-                </Link>
-              </li>
-              <li
-                class={`nav-item  ${
-                  props.location.pathname === "/Consent" ? "active" : ""
-                }`}
-              >
-                <Link class="nav-link" to= {Consent}>
-                  Consent
-                </Link>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+    <div className="App-header">
+      <Container>
+        <BrowserRouter>
+          <nav>
+
+            <label><Link to="/">PoP The Bubbles!</Link></label>
+          </nav>
+          <nav>
+
+            <Button href="https://nightwarri0r.ddns.net/index.php/s/pn7tprqEYaBXEei">
+              <Link to="/Consent"></Link>Consent Form
+              </Button>
+            <Button1 some_component={<Navitem />} />
+
+          </nav>
+          <Switch>
+            <Route path="/">
+
+            </Route>
+            <Route path="/Consent">
+
+            </Route>
+            <Route exact path="/Play_game">
+
+            </Route>
+
+            <Route exact path="/Play_game">
+
+            </Route>
+
+          </Switch>
+        </BrowserRouter>
+      </Container>
+
     </div>
   );
 }
 
-export default withRouter(Navigation);
+export default Navigation;
