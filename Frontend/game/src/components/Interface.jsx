@@ -17,10 +17,10 @@ function Navigation(props) {
             <label><Link to="/">PoP The Bubbles!</Link></label>
           </nav>
           <nav>
-
             <Button href="https://nightwarri0r.ddns.net/index.php/s/pn7tprqEYaBXEei">
               <Link to="/Consent"></Link>Consent Form
               </Button>
+              
             <Button1 some_component={<Navitem />} />
 
           </nav>
@@ -35,7 +35,7 @@ function Navigation(props) {
 
             </Route>
 
-            <Route exact path="/Play_game">
+            <Route exact path="/Navitem">
 
             </Route>
 
