@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import '../App.css';
-import Block from "./block";
+import Bubble from "./bubble";
 
 function Grid(
     {
@@ -8,33 +8,33 @@ function Grid(
         yOffset,
         height,
         width,
-        blockWidth,
-        blockHeight,
-        onBlockPress
+        bubbleWidth,
+        bubbleHeight,
+        onBubblePress
     }
 ) {
-    const generateNextRandomCords = (maxCordSize, blockSize) => {
-        return (Math.floor(Math.random() * (Math.ceil(maxCordSize / blockSize) - 1)) * blockSize)
+    const generateNextRandomBubble = (maxCordSize, bubbleSize) => {
+        return (Math.floor(Math.random() * (Math.ceil(maxCordSize / bubbleSize) - 1)) * bubbleSize)
     }
 
     const [currentX, setCurrentX] = useState(0);
     const [currentY, setCurrentY] = useState(0);
-    const onBlockPressHandler = () => {
-        onBlockPress({
+    const onBubblePressHandler = () => {
+        onBubblePress({
             cords: {
-                x: (currentX / blockWidth) + 1,
-                y: (currentY / blockHeight) + 1
+                x: (currentX / bubbleWidth) + 1,
+                y: (currentY / bubbleHeight) + 1
             },
             cordsScreenPosition: {
-                x: {start: currentX, end: currentX + blockWidth},
-                y: {start: currentY, end: currentY + blockHeight}
+                x: {start: currentX, end: currentX + bubbleWidth},
+                y: {start: currentY, end: currentY + bubbleHeight}
             }
         })
         generateNextGrid()
     }
     const generateNextGrid = () => {
-        setCurrentX(generateNextRandomCords(width, blockWidth, xOffset))
-        setCurrentY(generateNextRandomCords(height, blockHeight, yOffset))
+        setCurrentX(generateNextRandomBubble(width, bubbleWidth, xOffset))
+        setCurrentY(generateNextRandomBubble(height, bubbleHeight, yOffset))
     }
 
     return (
@@ -45,11 +45,11 @@ function Grid(
                     width: width,
                     top: yOffset,
                     left: xOffset,
-                    backgroundSize: `${blockWidth}px ${blockHeight}px`,
+                    backgroundSize: `${bubbleWidth}px ${bubbleHeight}px`,
                 }
             }>
-                <Block xOffset={currentX} yOffset={currentY} onClickHandler={onBlockPressHandler} height={blockHeight}
-                       width={blockWidth}/>
+                <Bubble xOffset={currentX} yOffset={currentY} onClickHandler={onBubblePressHandler} height={bubbleHeight}
+                       width={bubbleWidth}/>
             </div>
         </div>
     );
@@ -60,8 +60,8 @@ Grid.defaultProps = {
     yOffset: 100,
     height: 400,
     width: 400,
-    blockHeight: 50,
-    blockWidth: 100,
+    bubbleHeight: 50,
+    bubbleWidth: 100,
     interval: 5000
 }
 
