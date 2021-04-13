@@ -1,5 +1,4 @@
 import React from "react";
-import Consent from './Consent';
 import Button1 from './Button'
 import Navitem from './Navitem'
 import Container from 'react-bootstrap/Container';

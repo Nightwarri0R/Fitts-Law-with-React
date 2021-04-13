@@ -1,11 +1,6 @@
 
 import React from 'react'
-import { BrowserRouter as Link } from "react-router-dom";
-import Button1 from './Button';
-import Navigation from './Interface';
-
-
-
+import { BrowserRouter as Link } from "react-router-dom"
 
 const Consent = () => {
 
