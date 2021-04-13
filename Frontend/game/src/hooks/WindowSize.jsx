@@ -1,5 +1,8 @@
 import {useEffect, useState} from 'react'
-
+/**
+ * Function that gets the window size and reeturns it.
+ * @returns 
+ */
 
 function getWindowSize() {
   const { innerWidth: width, innerHeight: height } = window;
@@ -9,7 +12,10 @@ function getWindowSize() {
   };
 }
 
-
+/**
+ * 
+ * @returns 
+ */
 export default function useWindowSize() {
   const [windowSize, setWindowSize] = useState(getWindowSize());
 
