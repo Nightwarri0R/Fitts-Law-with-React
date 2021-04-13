@@ -5,7 +5,7 @@ import Navitem from './Navitem'
 import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
 import { BrowserRouter, Router, Route, Link, Switch } from 'react-router-dom';
-import App from '../App'
+
 
 
 
