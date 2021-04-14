@@ -1,4 +1,5 @@
 import '../App.css';
+import react from 'react';
 
 function Bubble(
     {
@@ -22,5 +23,6 @@ Bubble.defaultProps = {
     yOffset: 100,
     onClickHandler: () =>{}
 }
+
 
 export default Bubble;

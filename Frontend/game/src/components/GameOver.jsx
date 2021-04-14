@@ -5,4 +5,4 @@ const EndPage = () => {
 
 }
 
-export default EndPage
+export default EndPage;

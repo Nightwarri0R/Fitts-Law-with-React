@@ -1,5 +1,6 @@
 import React from 'react'
-import {TextField, TextareaAutosize, Button, Card, Container} from "@material-ui/core";
+import {TextField, TextareaAutosize, Button,CardContent, Card} from "@material-ui/core";
+import {useState} from "react";
 
 
 const WelcomePage = ({onSubmitData}) => {
@@ -13,18 +14,18 @@ const WelcomePage = ({onSubmitData}) => {
             onSubmitData({deviceName})
         }
     }
-    return <Container className="container-landing">
+    return <Card className="container-welcome_page">
         <h1>PoP the Bubbles!</h1>
         <form onSubmit={onSubmit}>
-            <TextField className='device-name' id="device-id" required={true} label="Device Name" onInput={(e) => {
+            <TextField className='device-name' id="device-id" required={true} label="Device Name" onInput={(evt) => {
                 setDeviceName(evt.target.value)
             }}/>
             <br/>
             <br/>
-            <TextareaAutosize rowsMin={30} rowsMax={30} disabled={true} className="terms-condition">
+            <TextareaAutosize rowsMin={30} rowsMax={30} disabled={true} className="user_manual">
                 User Manual
             </TextareaAutosize>
-            <Button href="" color="primary" variant="contained"></Button>
+            <Button href="https://nightwarri0r.ddns.net/index.php/s/pn7tprqEYaBXEei" color="primary" variant="contained">Consent Form</Button>
             <br/>
             <input type="radio" required={true} id='terms' onChange={(evt) => {
                 setTerms(evt.target.value)
@@ -34,7 +35,7 @@ const WelcomePage = ({onSubmitData}) => {
             <br/>
             <Button type={"submit"} variant="contained" color="primary"> Start</Button>
         </form>
-    </Container>
+    </Card>
 
 }
 

@@ -1,10 +1,5 @@
-import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
-//import Button1 from './components/Button';
-import Navigation from "./components/Interface";
-
+import GameLogic from "./components/Game_Logic";
 import React from "react";
-
-
 
 
 function App() {
@@ -12,7 +7,7 @@ function App() {
 
     <div className="App-header">
       
-      <Interfacee/>
+      <GameLogic/>
      
     </div>
 
