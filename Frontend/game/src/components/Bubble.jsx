@@ -11,8 +11,8 @@ function Bubble(
 ) {
 
     return (
-        <div className="circle-container" style={{left: xOffset, top: yOffset, height: height, width: width}}>
-            <div className="circle" onClick={onClickHandler} style={{height: height, width: width}}/>
+        <div className="bubble-container" style={{left: xOffset, top: yOffset, height: height, width: width}}>
+            <div className="bubble" onClick={onClickHandler} style={{height: height, width: width}}/>
         </div>
     )
 }

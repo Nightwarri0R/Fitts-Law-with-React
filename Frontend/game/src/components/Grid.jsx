@@ -40,8 +40,8 @@ function Grid(
     }
     /** */
     return (
-        <div className="container-wrapper">
-            <div className="container" style={
+        <div className="grid-wrapper">
+            <div className="grid" style={
                 {
                     height: height,
                     width: width,
