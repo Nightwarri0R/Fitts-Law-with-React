@@ -1,17 +1,17 @@
-import GameLogic from "./components/Game_Logic";
+import GameLogic from "./components/GameLogic";
 import React from "react";
 
 
 function App() {
-  return (
+    return (
 
-    <div className="App-header">
-      
-      <GameLogic/>
-     
-    </div>
+        <div className = "App-header" >
 
-  );
+        <GameLogic/>
+
+        </div>
+
+    );
 }
 
 export default App;

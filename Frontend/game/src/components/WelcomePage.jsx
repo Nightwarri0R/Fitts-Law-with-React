@@ -24,13 +24,15 @@ const WelcomePage = ({onSubmitData}) => {
             <br/>
             <TextareaAutosize rowsMin={30} rowsMax={30} disabled={true} className="user_manual">
                 User Manual
+                
+                1. Enter your device name 
             </TextareaAutosize>
             <Button href="https://nightwarri0r.ddns.net/index.php/s/pn7tprqEYaBXEei" color="primary" variant="contained">Consent Form</Button>
             <br/>
             <input type="radio" required={true} id='terms' onChange={(evt) => {
                 setTerms(evt.target.value)
             }}/>
-            <label>Terms of Service</label>
+            <label>Consent Form</label>
             <br/>
             <br/>
             <Button type={"submit"} variant="contained" color="primary"> Start</Button>

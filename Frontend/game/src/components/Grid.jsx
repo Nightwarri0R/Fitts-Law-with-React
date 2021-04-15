@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState,useEffect } from 'react'
 import '../App.css';
 import Bubble from "./Bubble";
 /** */
@@ -8,37 +8,35 @@ function Grid(
         yOffset,
         height,
         width,
-        bubbleWidth,
-        bubbleHeight,
+        blockWidth,
+        blockHeight,
         onBubblePress
     }
 ) {
-    /** */
-    const generateNextSquare = (maxCordSize, bubbleSize) => {
-        return (Math.floor(Math.random() * (Math.ceil(maxCordSize / bubbleSize) - 1)) * bubbleSize)
+    const generateNextRandomCords = (maxCordSize, blockSize) => {
+        return (Math.floor(Math.random() * (Math.ceil(maxCordSize / blockSize) - 1)) * blockSize)
     }
-    /** */
+
     const [currentX, setCurrentX] = useState(0);
     const [currentY, setCurrentY] = useState(0);
-    const onBubblePressHandler = () => {
+    const onBubblePresssHandler = () => {
         onBubblePress({
             cords: {
-                x: (currentX / bubbleWidth) + 1,
-                y: (currentY / bubbleHeight) + 1
+                x: (currentX / blockWidth) + 1,
+                y: (currentY / blockHeight) + 1
             },
             cordsScreenPosition: {
-                x: {start: currentX, end: currentX + bubbleWidth},
-                y: {start: currentY, end: currentY + bubbleHeight}
+                x: { start: currentX, end: currentX + blockWidth },
+                y: { start: currentY, end: currentY + blockHeight }
             }
         })
         generateNextGrid()
     }
-    /** Function that gnerates the grid by taking width bubble width and height and also the y and x offset */
     const generateNextGrid = () => {
-        setCurrentX(generateNextSquare(width, bubbleWidth, xOffset))
-        setCurrentY(generateNextSquare(height, bubbleHeight, yOffset))
+        setCurrentX(generateNextRandomCords(width, blockWidth, xOffset))
+        setCurrentY(generateNextRandomCords(height, blockHeight, yOffset))
     }
-    /** */
+
     return (
         <div className="grid-wrapper">
             <div className="grid" style={
@@ -47,23 +45,23 @@ function Grid(
                     width: width,
                     top: yOffset,
                     left: xOffset,
-                    backgroundSize: `${bubbleWidth}px ${bubbleHeight}px`,
+                    backgroundSize: `${blockWidth}px ${blockHeight}px`,
                 }
             }>
-                <Bubble xOffset={currentX} yOffset={currentY} onClickHandler={onBubblePressHandler} height={bubbleHeight}
-                       width={bubbleWidth}/>
+                <Bubble xOffset={currentX} yOffset={currentY} onClickHandler={onBubblePresssHandler} height={blockHeight}
+                    width={blockWidth} />
             </div>
         </div>
     );
 }
-/** Default variables for the grid rendered on the screen*/
+
 Grid.defaultProps = {
     xOffset: 100,
     yOffset: 100,
     height: 400,
     width: 400,
-    bubbleHeight: 50,
-    bubbleWidth: 100,
+    blockHeight: 50,
+    blockWidth: 100,
     interval: 5000
 }
 

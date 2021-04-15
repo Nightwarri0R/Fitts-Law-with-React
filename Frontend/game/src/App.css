@@ -76,3 +76,10 @@ body {
     margin-left: 30%;
     margin-bottom: 10%;
 }
+.game_over_container{
+    background-color: gray;
+    font-weight: bold;
+    text-align: center;
+    justify-content: center;
+
+}

@@ -1,4 +1,4 @@
-import {useState, useRef, useEffect, useCallback} from 'react'
+import { useState, useRef, useEffect, useCallback } from 'react'
 //import uuid from 'react-uuid'
 import '../App.css';
 import Grid from "./Grid";
@@ -6,10 +6,11 @@ import Timer from "./timer";
 import useWindowSize from "../hooks/WindowSize"
 import WelcomePage from "./WelcomePage";
 import EndPage from "./GameOver";
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
+//import Card from '@material-ui/core/Card';
+//import CardContent from '@material-ui/core/CardContent';
+import {Card, CardContent} from '@material-ui/core';
 
-function Game_logic() {
+function GameLogic() {
     const OPTIONS = {prefix: 'seconds elapsed!', delay: 0}
     const {width, height} = useWindowSize()
     const numberOfXSquares = 6
@@ -109,10 +110,10 @@ function Game_logic() {
     }
 
     return (
-        gameState === 0 ? <WelcomePage onSubmitData={onStartGame}/> : gameState === 1 ?
+        gameState === 0 ? <WelcomePage onSubmitData={onStartGame} /> : gameState === 1 ?
             <div>
-                <Grid  {...gridProps} onBubblePress={onBubblePress}/>
-                <Card style={{top: "35%", position: "absolute", width: "100%", textAlign: "center"}}>
+                <Grid  {...gridProps} onBubblePress={onBubblePress} />
+                <Card style={{ top: "35%", position: "absolute", width: "100%", textAlign: "center" }}>
                     <CardContent>
                         <Timer
                             ref={timer}
@@ -123,8 +124,8 @@ function Game_logic() {
                     </CardContent>
                 </Card>
             </div> :
-            <EndPage/>
+            <EndPage />
     )
 }
 
-export default Game_logic;
+export default GameLogic;
