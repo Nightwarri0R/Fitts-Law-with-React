@@ -88,6 +88,20 @@ function GameLogic() {
         setGameState(2)
         console.log(userData)
         //TODO use the user data with API
+        // console.log(userData.userInteractionData.upperGridClicks.length);
+        // console.log(userData.userInteractionData.lowerGridClicks.length);
+        let clickCounts = userData.userInteractionData.upperGridClicks.length + userData.userInteractionData.lowerGridClicks.length
+        console.log(clickCounts);
+        console.log(userData.userInteractionData.lowerGridClicks.length);
+        
+        //console.log(userData.userInteractionData.lowerGridClicks[0].cordsScreenPosition)
+        var i;
+        var top = [];
+        for (i =0; i < userData.userInteractionData.lowerGridClicks.length; i ++){
+        top = userData.userInteractionData.lowerGridClicks[i].cordsScreenPosition
+        }
+        console.log(top)
+
     }
 
     const onGameReset = () => {
@@ -124,7 +138,7 @@ function GameLogic() {
                     </CardContent>
                 </Card>
             </div> :
-            <EndPage />
+            <EndPage/>
     )
 }
 
