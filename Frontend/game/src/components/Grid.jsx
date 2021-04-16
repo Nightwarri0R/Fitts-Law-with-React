@@ -54,7 +54,9 @@ function Grid(
         </div>
     );
 }
-
+/**
+ * Function that sets the default boundaries for thre grid
+ */
 Grid.defaultProps = {
     xOffset: 100,
     yOffset: 100,
