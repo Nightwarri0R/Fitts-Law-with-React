@@ -39,7 +39,7 @@ const WelcomePage = ({onSubmitData}) => {
             <input type="radio" required={true} id='terms' onChange={(evt) => {
                 setTerms(evt.target.value)
             }}/>
-            <label>Consent Form</label>
+            <label>I accept consent form conditions</label>
             <br/>
             <br/>
             <Button type={"submit"} variant="contained" color="primary"> Start</Button>
