@@ -5,10 +5,9 @@ import Timer from "./timer";
 import useWindowSize from "../hooks/WindowSize"
 import WelcomePage from "./WelcomePage";
 import EndPage from "./GameOver";
-//import Card from '@material-ui/core/Card';
-//import CardContent from '@material-ui/core/CardContent';
 import {Card, CardContent} from '@material-ui/core';
 import qs from 'qs'
+const port = 3000;
 
 const axios = require('axios').default;
 
@@ -18,7 +17,7 @@ function GameLogic() {
     const {width, height} = useWindowSize()
     const numberOfXSquares = 6
     const numberOfYSquares = 3
-    const gameTime = 0.3 * 60 * 1000 // TOTAL GAME TIME. ON REACHING HALF OF THIS TIME THE GAME WILL FLIP. Time is in millisecond
+    const gameTime = 1 * 60 * 1000 // TOTAL GAME TIME. ON REACHING HALF OF THIS TIME THE GAME WILL FLIP. Time is in millisecond
     const flipTime = gameTime / 2 // TIME TO FLIP BOARD TO BOTTOM
 
     const gridLocationTop = {
@@ -135,14 +134,15 @@ function GameLogic() {
         gameState === 0 ? <WelcomePage onSubmitData={onStartGame} /> : gameState === 1 ?
             <div>
                 <Grid  {...gridProps} onBubblePress={onBubblePress} />
-                <Card style={{ top: "35%", position: "absolute", width: "100%", textAlign: "center" }}>
+                <Card style={{ top: "40%", position: "absolute", width: "100%", textAlign: "center" }}>
                     <CardContent>
                         <Timer
                             ref={timer}
                             onUpdate={onClockUpdate}
                             options={OPTIONS}
                         />
-                        <h4>Click Count: {clickCounts}</h4>
+                        <h4>Popped Bubbles</h4>
+                        <h4>{clickCounts}</h4>
                     </CardContent>
                 </Card>
             </div> :
