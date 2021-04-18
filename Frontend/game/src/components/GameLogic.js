@@ -1,5 +1,4 @@
 import { useState, useRef, useEffect, useCallback } from 'react'
-//import uuid from 'react-uuid'
 import '../App.css';
 import Grid from "./Grid";
 import Timer from "./timer";
@@ -9,13 +8,17 @@ import EndPage from "./GameOver";
 //import Card from '@material-ui/core/Card';
 //import CardContent from '@material-ui/core/CardContent';
 import {Card, CardContent} from '@material-ui/core';
+import qs from 'qs'
+
+const axios = require('axios').default;
+
 
 function GameLogic() {
     const OPTIONS = {prefix: 'seconds elapsed!', delay: 0}
     const {width, height} = useWindowSize()
     const numberOfXSquares = 6
     const numberOfYSquares = 3
-    const gameTime = 1 * 60 * 1000 // TOTAL GAME TIME. ON REACHING HALF OF THIS TIME THE GAME WILL FLIP. Time is in millisecond
+    const gameTime = 0.3 * 60 * 1000 // TOTAL GAME TIME. ON REACHING HALF OF THIS TIME THE GAME WILL FLIP. Time is in millisecond
     const flipTime = gameTime / 2 // TIME TO FLIP BOARD TO BOTTOM
 
     const gridLocationTop = {
@@ -44,7 +47,6 @@ function GameLogic() {
             upperGridClickCount: 0, // CLICKS REGISTERED ON UPPER LEVEL
             lowerGridClickCount: 0 // CLICKS REGISTERED ON LOWER LEVEL
         }, // USER INTERACTION DATA
-        //userId: uuid(), // UNIQUE ID GIVEN TO USER
         deviceName: '', // DEVICE NAME ENTERED BY USER
         gridTopSpecs: gridLocationTop, //SPECS OF UPPER GRID AS PER USER DEVICE
         gridBottomSpecs: gridLocationBottom, // SPECS OF THE BOTTOM GRID PRINTED AS PER USER SCREEN
@@ -87,20 +89,26 @@ function GameLogic() {
         timer.current.pause()
         setGameState(2)
         console.log(userData)
-        //TODO use the user data with API
-        // console.log(userData.userInteractionData.upperGridClicks.length);
-        // console.log(userData.userInteractionData.lowerGridClicks.length);
-        let clickCounts = userData.userInteractionData.upperGridClicks.length + userData.userInteractionData.lowerGridClicks.length
+        //TODO use the user data with
         console.log(clickCounts);
         console.log(userData.userInteractionData.lowerGridClicks.length);
+        console.log(userData);
+        console.log(userData.deviceName)
         
         //console.log(userData.userInteractionData.lowerGridClicks[0].cordsScreenPosition)
-        var i;
-        var top = [];
-        for (i =0; i < userData.userInteractionData.lowerGridClicks.length; i ++){
-        top = userData.userInteractionData.lowerGridClicks[i].cordsScreenPosition
-        }
-        console.log(top)
+        
+            
+        // })
+        axios({
+            method: 'post',
+            url:'http://localhost:3000',
+            headers: { 'content-type': 'application/x-www-form-urlencoded' }, 
+            data: {
+              data : qs.stringify(userData)
+              
+            }
+          });
+        //axios.post('http://localhost:3000/',userData)
 
     }
 
