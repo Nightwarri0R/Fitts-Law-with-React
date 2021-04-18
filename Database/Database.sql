@@ -1,11 +1,9 @@
 
-DROP TABLE IF EXISTS jsonscores;
+DROP TABLE IF EXISTS jsondata;
 
-CREATE TABLE jsonscores(
-user_id SERIAL PRIMARY KEY, 
-device_name json NOT NULL,
-tottal_score json NOT NULL, 
-upper_scores json NOT NULL,
-lower_scores json NOT NULL
+
+CREATE TABLE jsondata(
+user_id SERIAL PRIMARY KEY,
+data json NOT NULL
 
 );

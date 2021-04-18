@@ -28,8 +28,21 @@ app.post('/', (req, res) => {
         .connect()
         .then(() => {
             console.log("connected")
+            var deviceName = JSON.stringify(req.body.deviceName)
+            var totalCounts = JSON.stringify(req.body.userInteractionData.upperGridClickCount) + JSON.stringify(req.body.userInteractionData.lowerGridClickCount)
+            var upperTaps = JSON.stringify(req.body.userInteractionData.upperGridClicks)
+            var bottomTaps = JSON.stringify(req.body.userInteractionData.lowerGridClicks)
+            console.log(deviceName, '\n',totalCounts,'\n', "This is upperTaps", upperTaps,'\n',"This is upperTaps", bottomTaps)
 
-            client.query(`INSERT INTO jsondata (data) VALUES('${JSON.stringify(req.body)}');`, (err, res) => {
+            var data = {
+                deviceName: req.body.deviceName,
+                totalCounts: req.body.userInteractionData.upperGridClicks.length + "," + req.body.userInteractionData.lowerGridClicks.length,
+                upperTaps: req.body.userInteractionData.upperGridClicks,
+                bottomTaps: req.body.userInteractionData.lowerGridClicks
+            };
+
+            //console.log(JSON.stringify(req.body.userInteractionData.lowerGridClicks));
+            client.query(`INSERT INTO jsondata (data) VALUES('${JSON.stringify(data)}');`, (err, res) => {
                 console.log("data sent")
                 client.end()
             })
