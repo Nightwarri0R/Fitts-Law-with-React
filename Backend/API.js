@@ -34,8 +34,15 @@ app.post('/', (req, res) => {
             var bottomTaps = JSON.stringify(req.body.userInteractionData.lowerGridClicks)
             console.log(deviceName, '\n',totalCounts,'\n', "This is upperTaps", upperTaps,'\n',"This is upperTaps", bottomTaps)
 
-            console.log(JSON.stringify(req.body.userInteractionData.lowerGridClicks));
-            client.query(`INSERT INTO jsondata (data) VALUES('${deviceName}, ${totalCounts}, ${upperTaps}, ${bottomTaps}');`, (err, res) => {
+            var data = {
+                deviceName: req.body.deviceName,
+                totalCounts: req.body.userInteractionData.upperGridClicks.length + "," + req.body.userInteractionData.lowerGridClicks.length,
+                upperTaps: req.body.userInteractionData.upperGridClicks,
+                bottomTaps: req.body.userInteractionData.lowerGridClicks
+            };
+
+            //console.log(JSON.stringify(req.body.userInteractionData.lowerGridClicks));
+            client.query(`INSERT INTO jsondata (data) VALUES('${JSON.stringify(data)}');`, (err, res) => {
                 console.log("data sent")
                 client.end()
             })
