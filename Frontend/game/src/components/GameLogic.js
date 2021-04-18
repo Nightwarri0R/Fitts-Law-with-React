@@ -101,7 +101,7 @@ function GameLogic() {
         // })
         axios({
             method: 'post',
-            url:'http://localhost:3000',
+            url:'http://3.141.26.152:3000',
             headers: { 'content-type': 'application/x-www-form-urlencoded' }, 
             data: {
               data : qs.stringify(userData)
