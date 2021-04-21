@@ -100,7 +100,7 @@ function GameLogic() {
         // })
         axios({
             method: 'post',
-            url:'http://3.141.26.152:3000',
+            //url:'http://3.141.26.152:3000',
             headers: { 'content-type': 'application/x-www-form-urlencoded' }, 
             data: {
               data : qs.stringify(userData)
@@ -134,15 +134,15 @@ function GameLogic() {
         gameState === 0 ? <WelcomePage onSubmitData={onStartGame} /> : gameState === 1 ?
             <div>
                 <Grid  {...gridProps} onBubblePress={onBubblePress} />
-                <Card style={{ top: "40%", position: "absolute", width: "100%", textAlign: "center" }}>
+                <Card style={{ top: "40%", position: "absolute",  height:"12%",width: "100%", textAlign: "center" }}>
                     <CardContent>
                         <Timer
                             ref={timer}
                             onUpdate={onClockUpdate}
                             options={OPTIONS}
                         />
-                        <h4>Popped Bubbles</h4>
-                        <h4>{clickCounts}</h4>
+                      
+                        <h4> Popped Bubbles:{clickCounts}</h4>
                     </CardContent>
                 </Card>
             </div> :
