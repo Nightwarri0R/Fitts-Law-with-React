@@ -2,7 +2,7 @@ import { useState, useRef, useEffect, useCallback } from 'react'
 import '../App.css';
 import Grid from "./Grid";
 import Timer from "./timer";
-import useWindowSize from "../hooks/WindowSize"
+import useWindowSize from "../windowSize/WindowSize"
 import WelcomePage from "./WelcomePage";
 import EndPage from "./GameOver";
 import {Card, CardContent} from '@material-ui/core';
@@ -141,7 +141,6 @@ function GameLogic() {
                             onUpdate={onClockUpdate}
                             options={OPTIONS}
                         />
-                      
                         <h4> Popped Bubbles:{clickCounts}</h4>
                     </CardContent>
                 </Card>

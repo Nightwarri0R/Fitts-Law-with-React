@@ -1,3 +1,8 @@
+/**
+ * Component that is used tro return seconds that will used in timer component later on 
+ * @param {*} totalSeconds 
+ * @returns 
+ */
 
 let SecondCounter= function(totalSeconds) {
   let hours   = Math.floor(totalSeconds / 3600);

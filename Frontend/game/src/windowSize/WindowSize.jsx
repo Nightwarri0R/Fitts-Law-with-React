@@ -1,6 +1,6 @@
 import {useEffect, useState} from 'react'
 /**
- * Function that gets the window size and reeturns it.
+ * Get function that retrun the window size on load of the page.
  * @returns 
  */
 
@@ -13,7 +13,7 @@ function getWindowSize() {
 }
 
 /**
- * 
+ * Based on the window size it used for resizing the grid
  * @returns 
  */
 export default function useWindowSize() {

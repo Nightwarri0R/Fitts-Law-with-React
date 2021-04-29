@@ -54,7 +54,7 @@ export default class Timer extends Component {
         let time = SecondCounter(clockReset / 1000)
         this.setState({ time: time })
     }
-
+// Updates the clock as the game goes on
     update() {
         let clock = this.state.clock
         clock += this.calculateOffset()

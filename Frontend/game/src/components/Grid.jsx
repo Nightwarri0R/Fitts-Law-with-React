@@ -1,7 +1,7 @@
 import React, { useState,useEffect } from 'react'
 import '../App.css';
 import Bubble from "./Bubble";
-/** */
+/**Defining some basic variable that our grid component will be using*/
 function Grid(
     {
         xOffset,
@@ -19,6 +19,7 @@ function Grid(
 
     const [currentX, setCurrentX] = useState(0);
     const [currentY, setCurrentY] = useState(0);
+// Event handler for bubbles press
     const onBubblePresssHandler = () => {
         onBubblePress({
             cords: {
@@ -32,11 +33,12 @@ function Grid(
         })
         generateNextGrid()
     }
+// Generates the next grid cells based on y, x offset and blockwidth, blockheight variables
     const generateNextGrid = () => {
         setCurrentX(generateNextRandomCords(width, blockWidth, xOffset))
         setCurrentY(generateNextRandomCords(height, blockHeight, yOffset))
     }
-
+// Renders the grid with the given variables and also takes as a copmonent the bubble 
     return (
         <div className="grid-wrapper">
             <div className="grid" style={
@@ -55,7 +57,7 @@ function Grid(
     );
 }
 /**
- * Function that sets the default boundaries for thre grid
+ * Function that sets the default boundaries for the grid and the size of it
  */
 Grid.defaultProps = {
     xOffset: 100,
